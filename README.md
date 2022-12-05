@@ -38,6 +38,10 @@ Now just choose the paintbrush tool from the palette and the tile you want to pa
 
 (Make sure you choose the right tilemap from the hierarchy on the left)
 
+This tutorial also shows where all these are
+
+https://www.mongodb.com/developer/languages/csharp/designing-developing-2d-game-levels-unity-csharp/
+
 Go crazy
 
 I haven't figured out if you can rotate tiles yet so don't worry about it looking entirely correct. Just put down the general layout of the church
