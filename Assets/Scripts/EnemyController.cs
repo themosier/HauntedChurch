@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -8,12 +9,16 @@ public class EnemyController : MonoBehaviour
 
     private bool isInHearingRange = false;
     private Vector3 lastKnownPlayerPos;
-    private float moveDuration = 0.0f;
+    private float moveTime = 0.0f;
+    private float maxMoveTime = 0.0f;
     private Vector3 direction;
+    private Vector3 targetPoint;
+
+    private Rigidbody2D rb;
 
     public GameObject player;
-    public float speed;
-    public float moveTime;
+    public float moveSpeed;
+    public float rotSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +26,20 @@ public class EnemyController : MonoBehaviour
         // Hack lol
         lastKnownPlayerPos = Vector3.zero;
         direction = Vector3.zero;
+        targetPoint = Vector3.zero;
+        rb = GetComponentInParent<Rigidbody2D>();
+
+        // generate new target
+        float x = UnityEngine.Random.Range(-10.0f, 10.0f);
+        float y = UnityEngine.Random.Range(-5.0f, 5.0f);
+
+        targetPoint.x = x;
+        targetPoint.y = y;
+        // reset moveTime
+        moveTime = 0;
+
+        // generate new maxMoveTime
+        maxMoveTime = UnityEngine.Random.Range(2.0f, 4.0f);
     }
 
     // Update is called once per frame
@@ -39,10 +58,10 @@ public class EnemyController : MonoBehaviour
             direction = (transform.position - lastKnownPlayerPos).normalized;
             float hPos = direction.x;
             Vector3 pos = transform.position;
-            pos.x += speed * hPos * Time.deltaTime;
+            pos.x += moveSpeed * hPos * Time.deltaTime;
 
             float vPos = direction.y;
-            pos.y += speed * vPos * Time.deltaTime;
+            pos.y += moveSpeed * vPos * Time.deltaTime;
             transform.position = pos;
         }
         else
@@ -53,31 +72,57 @@ public class EnemyController : MonoBehaviour
 
     void MoveRandom()
     {
-        if (moveDuration < moveTime)
-        {
-            // keep moving in direction
-            float hPos = direction.x;
-            Vector3 pos = transform.position;
-            pos.x += speed * hPos * Time.deltaTime;
+        //if (moveDuration < moveTime)
+        //{
+        //    // keep moving in direction
+        //    float hPos = direction.x;
+        //    Vector3 pos = transform.position;
+        //    pos.x += speed * hPos * Time.deltaTime;
 
-            float vPos = direction.y;
-            pos.y += speed * vPos * Time.deltaTime;
-            transform.position = pos;
-            moveDuration += Time.deltaTime;
-        }
-        else
+        //    float vPos = direction.y;
+        //    pos.y += speed * vPos * Time.deltaTime;
+        //    transform.position = pos;
+        //    moveDuration += Time.deltaTime;
+        //}
+        //else
+        //{
+        //    // calculate new direction
+        //    direction = UnityEngine.Random.insideUnitCircle.normalized;
+        //    moveDuration = 0.0f;
+        //}
+
+        if (moveTime > maxMoveTime || Vector2.Distance(transform.position, targetPoint) < .0001)
         {
-            // calculate new direction
-            direction = Random.insideUnitCircle.normalized;
-            moveDuration = 0.0f;
+            // generate new target
+            float x = UnityEngine.Random.Range(-10.0f, 10.0f);
+            float y = UnityEngine.Random.Range(-5.0f, 5.0f);
+
+            targetPoint.x = x;
+            targetPoint.y = y;
+            // reset moveTime
+            moveTime = 0;
+
+            // generate new maxMoveTime
+            maxMoveTime = UnityEngine.Random.Range(2.0f, 4.0f);
         }
+
+        direction = targetPoint - transform.position;
+        direction.Normalize();
+
+        Quaternion rot = Quaternion.LookRotation(Vector3.forward, direction);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, rotSpeed * Time.deltaTime);
+
+        transform.position += transform.forward * moveSpeed * Time.deltaTime;
+
+        // STOP DELETING THIS LINE IDIONT
+        moveTime += Time.deltaTime;
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            Destroy(other.gameObject);
+           // Destroy(other.gameObject);
         }
     }
 
@@ -101,4 +146,9 @@ public class EnemyController : MonoBehaviour
     // If enemy reaches bounding walls, change direction
 
     // Enemy can move unimpeded through walls
+
+    // COLLISION
+    // Box collider on enemy sprite
+    // Attach empty child with trigger circle collider
+
 }
