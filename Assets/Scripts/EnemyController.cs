@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityMovementAI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class EnemyController : MonoBehaviour
     public float moveSpeed;
     public float rotSpeed;
 
+    private Wander2Unit moveBehavior;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,8 @@ public class EnemyController : MonoBehaviour
         direction = Vector3.zero;
         targetPoint = Vector3.zero;
         rb = GetComponentInParent<Rigidbody2D>();
+        moveBehavior = GetComponent<Wander2Unit>();
+        
 
         // generate new target
         float x = UnityEngine.Random.Range(-10.0f, 10.0f);
@@ -91,28 +96,32 @@ public class EnemyController : MonoBehaviour
         //    moveDuration = 0.0f;
         //}
 
-        if (moveTime > maxMoveTime || Vector2.Distance(transform.position, targetPoint) < .0001)
+        //if (moveTime > maxMoveTime || Vector2.Distance(transform.position, targetPoint) < .0001)
+        //{
+        //    // generate new target
+        //    float x = UnityEngine.Random.Range(-10.0f, 10.0f);
+        //    float y = UnityEngine.Random.Range(-5.0f, 5.0f);
+
+        //    targetPoint.x = x;
+        //    targetPoint.y = y;
+        //    // reset moveTime
+        //    moveTime = 0;
+
+        //    // generate new maxMoveTime
+        //    maxMoveTime = UnityEngine.Random.Range(2.0f, 4.0f);
+        //}
+
+        //direction = targetPoint - transform.position;
+        //direction.Normalize();
+
+        //Quaternion rot = Quaternion.LookRotation(Vector3.forward, direction);
+        //transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, rotSpeed * Time.deltaTime);
+
+        //transform.position += transform.forward * moveSpeed * Time.deltaTime;
+
+        if (moveTime > 2.0f)
         {
-            // generate new target
-            float x = UnityEngine.Random.Range(-10.0f, 10.0f);
-            float y = UnityEngine.Random.Range(-5.0f, 5.0f);
-
-            targetPoint.x = x;
-            targetPoint.y = y;
-            // reset moveTime
-            moveTime = 0;
-
-            // generate new maxMoveTime
-            maxMoveTime = UnityEngine.Random.Range(2.0f, 4.0f);
         }
-
-        direction = targetPoint - transform.position;
-        direction.Normalize();
-
-        Quaternion rot = Quaternion.LookRotation(Vector3.forward, direction);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, rotSpeed * Time.deltaTime);
-
-        transform.position += transform.forward * moveSpeed * Time.deltaTime;
 
         // STOP DELETING THIS LINE IDIONT
         moveTime += Time.deltaTime;
