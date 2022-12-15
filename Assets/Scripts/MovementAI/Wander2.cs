@@ -3,7 +3,7 @@
 namespace UnityMovementAI
 {
     [RequireComponent(typeof(SteeringBasics))]
-    public class Wander2 : MonoBehaviour
+    public class Wander2 : MovementInterface
     {
         public float wanderRadius = 1.2f;
 

@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 namespace UnityMovementAI
 {
-    public class Wander2Unit : MonoBehaviour
+    public class Wander2Unit : MovementUnitInterface
     {
         SteeringBasics steeringBasics;
         Wander2 wander;
@@ -10,7 +11,9 @@ namespace UnityMovementAI
         void Start()
         {
             steeringBasics = GetComponent<SteeringBasics>();
-            wander = GetComponent<Wander2>();
+            this.AddComponent<Wander2>();
+            moveType = GetComponent<Wander2>();
+            wander = (Wander2)moveType;
         }
 
         void FixedUpdate()

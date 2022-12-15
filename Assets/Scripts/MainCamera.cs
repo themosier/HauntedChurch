@@ -5,14 +5,14 @@ using UnityEngine;
 public class MainCamera : MonoBehaviour
 {
 
-    private PlayerController Player;
+    //private PlayerController Player;
     public float offset = 1.0f;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameController.game.Player;
+        //Player = GameController.game.Player;
         
     }
 
@@ -20,6 +20,6 @@ public class MainCamera : MonoBehaviour
     void Update()
     {
         //transform.position = new Vector3(GameController.game.Player.transform.position.x, GameController.game.Player.transform.position.y + offset, transform.position.z);
-        transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + offset, transform.position.z);
+        transform.position = new Vector3(GameController.Player.transform.position.x, GameController.Player.transform.position.y + offset, transform.position.z);
     }
 }

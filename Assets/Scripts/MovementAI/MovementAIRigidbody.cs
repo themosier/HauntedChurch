@@ -30,6 +30,7 @@ namespace UnityMovementAI
             }
         }
 
+        [SerializeField]
         Rigidbody2D rb2D;
 
         void Awake()
@@ -48,10 +49,10 @@ namespace UnityMovementAI
 
         void SetUpRigidbody()
         {
-            Rigidbody rb = GetComponent<Rigidbody>();
+            //Rigidbody rb = GetComponent<Rigidbody>();
             this.rb2D = GetComponent<Rigidbody2D>();
-                
-            
+
+
         }
 
         void SetUpCollider()
