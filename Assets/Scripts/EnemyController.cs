@@ -74,7 +74,7 @@ public class EnemyController : MonoBehaviour
         {
             moveWander.enabled = true;
             movePursue.enabled = false;
-            Debug.Log("WANDER");
+            //Debug.Log("WANDER");
         }
     }
 
