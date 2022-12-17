@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 224745315}
   - component: {fileID: 224745317}
   - component: {fileID: 224745316}
+  - component: {fileID: 224745318}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -22947,6 +22948,26 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!95 &224745318
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224745314}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b8bf9711a594f7945989c846b217c961, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -23205,7 +23226,7 @@ Animator:
   m_GameObject: {fileID: 771985136}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 782d1b42bd0daed48aa561d485b28c05, type: 2}
+  m_Controller: {fileID: 9100000, guid: b8bf9711a594f7945989c846b217c961, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
