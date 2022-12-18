@@ -7,61 +7,31 @@ using UnityMovementAI;
 
 public class EnemyController : MonoBehaviour
 {
-    private Vector3 lastKnownPlayerPos;
-    private float moveTime = 0.0f;
-    private float maxMoveTime = 0.0f;
-    private Vector3 direction;
-    private Vector3 targetPoint;
     private PlayerDetection hearing;
-    private MovementUnitInterface moveComponent;
-    //private PursueUnit movePursue;
-    //private Wander2Unit moveWander;
-
     public static PursueUnit movePursue { get; private set; }
     public static Wander2Unit moveWander { get; private set; }
 
 
     private Rigidbody2D rb;
+    Animator anim;
 
-    //public GameObject player;
-    //public float moveSpeed;
-   // public float rotSpeed;
-
-    //private Wander2Unit moveBehavior;
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        // Hack lol
-        lastKnownPlayerPos = Vector3.zero;
-        direction = Vector3.zero;
-        targetPoint = Vector3.zero;
-        rb = GetComponentInParent<Rigidbody2D>();
-        //moveBehavior = GetComponent<Wander2Unit>();
         hearing = GetComponentInChildren<PlayerDetection>();
-
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
 
         // Add movement modes
         movePursue = gameObject.AddComponent<PursueUnit>();
         movePursue.enabled = false;
         moveWander = gameObject.AddComponent<Wander2Unit>();
         moveWander.enabled = true;
-
-        // generate new target
-        float x = UnityEngine.Random.Range(-10.0f, 10.0f);
-        float y = UnityEngine.Random.Range(-5.0f, 5.0f);
-
-        targetPoint.x = x;
-        targetPoint.y = y;
-        // reset moveTime
-        moveTime = 0;
-
-        // generate new maxMoveTime
-        maxMoveTime = UnityEngine.Random.Range(2.0f, 4.0f);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (hearing.isInHearingRange)
         {
@@ -76,19 +46,9 @@ public class EnemyController : MonoBehaviour
             movePursue.enabled = false;
             //Debug.Log("WANDER");
         }
-    }
 
-
-    void MoveRandom()
-    {
-       
-
-        if (moveTime > 2.0f)
-        {
-        }
-
-        // STOP DELETING THIS LINE IDIONT
-        moveTime += Time.deltaTime;
+        anim.SetFloat("X", rb.velocity.x);
+        anim.SetFloat("Y", rb.velocity.y);
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -97,6 +57,12 @@ public class EnemyController : MonoBehaviour
         {
            // Destroy(other.gameObject);
         }
+        else if (other.gameObject.tag == "Walls")
+        {
+           // moveWander.GetComponent<Wander2>().wanderTarget = -(moveWander.GetComponent<Wander2>().wanderTarget);
+        }
+
+        
     }
 
     

@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityMovementAI;
+using UnityEngine.Assertions;
 
 public class GameController : MonoBehaviour // Singleton class holding references to significant static objects
 {
@@ -10,6 +12,9 @@ public class GameController : MonoBehaviour // Singleton class holding reference
     public static PlayerController Player { get; private set; }
     //public static PursueUnit movePursue { get; private set; }
     //public static Wander2Unit moveWander { get; private set; }
+
+    public static Vector2 maxBounds { get; private set; }
+    public static Vector2 minBounds { get; private set; }
 
     
 
@@ -22,13 +27,15 @@ public class GameController : MonoBehaviour // Singleton class holding reference
         }
         game = this;
         Player = game.GetComponentInChildren<PlayerController>();
-        //game.AddComponent<PursueUnit>();
-        //movePursue = GetComponent<PursueUnit>();
-        //movePursue.target = Player.GetComponent<MovementAIRigidbody>();
 
-        //game.AddComponent<Wander2Unit>();
-        //moveWander = GetComponent<Wander2Unit>();
+        GameObject walls = GameObject.Find("Walls");
+        Assert.IsNotNull(walls);
+        
+        minBounds = walls.GetComponent<Renderer>().bounds.min;
+        maxBounds = walls.GetComponent<Renderer>().bounds.max;
 
+        Debug.Log("min: " + minBounds);
+        Debug.Log("max: " + maxBounds);
 
     }
 

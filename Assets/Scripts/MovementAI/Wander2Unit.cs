@@ -6,7 +6,7 @@ namespace UnityMovementAI
     public class Wander2Unit : MovementUnitInterface
     {
         SteeringBasics steeringBasics;
-        Wander2 wander;
+        public Wander2 wander { get; set; }
 
         void Start()
         {

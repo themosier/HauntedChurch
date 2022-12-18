@@ -5,16 +5,19 @@ namespace UnityMovementAI
     [RequireComponent(typeof(SteeringBasics))]
     public class Wander2 : MovementInterface
     {
-        public float wanderRadius = 1.2f;
+        public float wanderRadius = 3f;
 
-        public float wanderDistance = 2f;
+        public float wanderDistance = 1f;
 
         /// <summary>
         /// Maximum amount of random displacement a second
         /// </summary>
-        public float wanderJitter = 40f;
+        public float wanderJitter = 45f;
 
-        Vector3 wanderTarget;
+        public Vector3 wanderTarget;
+
+        [SerializeField]
+        float offset = 2.0f;
 
         SteeringBasics steeringBasics;
 
@@ -47,6 +50,7 @@ namespace UnityMovementAI
             /* Add a small random vector to the target's position */
 
             wanderTarget += new Vector3(Random.Range(-1f, 1f) * jitter, Random.Range(-1f, 1f) * jitter, 0f);
+            
 
 
             /* Make the wanderTarget fit on the wander circle again */
@@ -56,7 +60,18 @@ namespace UnityMovementAI
             /* Move the target in front of the character */
             Vector3 targetPosition = transform.position + transform.right * wanderDistance + wanderTarget;
 
-            //Debug.DrawLine(transform.position, targetPosition);
+            if ((targetPosition.x > GameController.maxBounds.x - offset) ||
+                (targetPosition.x < GameController.minBounds.x + offset))
+            {
+                targetPosition.x = -(targetPosition.x);
+            }
+            if ((targetPosition.y > GameController.maxBounds.y - offset) ||
+                (targetPosition.y < GameController.minBounds.y + offset))
+            {
+                targetPosition.y = -(targetPosition.y);
+            }
+
+            Debug.DrawLine(transform.position, targetPosition);
 
             return steeringBasics.Seek(targetPosition);
         }
