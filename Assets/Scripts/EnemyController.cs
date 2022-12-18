@@ -23,6 +23,7 @@ public class EnemyController : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
+
         // Add movement modes
         movePursue = gameObject.AddComponent<PursueUnit>();
         movePursue.enabled = false;
@@ -51,18 +52,14 @@ public class EnemyController : MonoBehaviour
         anim.SetFloat("Y", rb.velocity.y);
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.gameObject.tag == "Player")
         {
-           // Destroy(other.gameObject);
+            // GAME OVER
+            //Destroy(other.gameObject);
         }
-        else if (other.gameObject.tag == "Walls")
-        {
-           // moveWander.GetComponent<Wander2>().wanderTarget = -(moveWander.GetComponent<Wander2>().wanderTarget);
-        }
-
-        
     }
 
     
