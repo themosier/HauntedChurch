@@ -15,7 +15,7 @@ public class PlayerDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = GameController.Enemy.transform.position;
     }
 
     void OnTriggerEnter2D(Collider2D other)

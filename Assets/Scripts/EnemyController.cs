@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityMovementAI;
 
 public class EnemyController : MonoBehaviour
@@ -59,9 +60,19 @@ public class EnemyController : MonoBehaviour
         {
             // GAME OVER
             //Destroy(other.gameObject);
+            
+            StartCoroutine(GameOver());
+            Time.timeScale = 0;
         }
     }
 
+    IEnumerator GameOver()
+    {
+        yield return new WaitForSecondsRealtime(1);
+
+        Time.timeScale = 1;
+        GameController.uiManager.GameOver();
+    }
     
 
     // WHEN RADIUS' INTERSECT

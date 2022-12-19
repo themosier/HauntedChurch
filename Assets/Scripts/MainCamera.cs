@@ -8,9 +8,6 @@ public class MainCamera : MonoBehaviour
     //private PlayerController Player;
     public float offset = 1.0f;
 
-    [SerializeField]
-    private Camera camera;
-
     float camVertExtent;
     float camHorzExtent;
 
@@ -23,8 +20,8 @@ public class MainCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        camVertExtent = camera.orthographicSize;
-        camHorzExtent = camera.aspect * camVertExtent;
+        camVertExtent = GameController.MainCamera.orthographicSize;
+        camHorzExtent = GameController.MainCamera.aspect * camVertExtent;
 
         leftBound = GameController.minBounds.x + camHorzExtent;
         rightBound = GameController.maxBounds.x - camHorzExtent;
