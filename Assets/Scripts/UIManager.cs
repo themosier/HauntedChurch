@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -27,5 +29,15 @@ public class UIManager : MonoBehaviour
     public void QuitGame()
     {
 
+    }
+
+    public void ButtonHighlight(TextMeshProUGUI text)
+    {
+        text.color = Color.white;
+    }
+
+    public void ButtonUnHighlight(TextMeshProUGUI text)
+    {
+        text.color = new Color(190, 0, 0);
     }
 }
