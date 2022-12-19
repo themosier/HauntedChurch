@@ -142,9 +142,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 288
-        width: 32
-        height: 32
+        y: 256
+        width: 96
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,48 +327,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Current Sprite Sheet - 12.14_10
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 288
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 719bbc2c75fc84f828b2f420c6208df5
-      internalID: 363264154
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Current Sprite Sheet - 12.14_11
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 288
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6db74c7643a034dbfa2d77e58a9199cc
-      internalID: 709220033
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Current Sprite Sheet - 12.14_12
       rect:
         serializedVersion: 2
@@ -458,7 +416,7 @@ TextureImporter:
         serializedVersion: 2
         x: 128
         y: 256
-        width: 32
+        width: 64
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -469,27 +427,6 @@ TextureImporter:
       bones: []
       spriteID: 866eb66604d5d41049ba06c3baa902d7
       internalID: -667867801
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Current Sprite Sheet - 12.14_17
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 256
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f013fe7c6813c4e5499a6161f70d50ab
-      internalID: -469544978
       vertices: []
       indices: 
       edges: []
@@ -511,69 +448,6 @@ TextureImporter:
       bones: []
       spriteID: 49746abd3c35e4446b772ff24061187c
       internalID: 100868173
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Current Sprite Sheet - 12.14_19
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 256
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01002aa3f950d4e18ac197ac68dcec14
-      internalID: 1832364073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Current Sprite Sheet - 12.14_20
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 256
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26b4019f7ee62469b9c3c38a7af9e06c
-      internalID: -650575779
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Current Sprite Sheet - 12.14_21
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 256
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddff3a32735f14c5f8a687244a8a4cf8
-      internalID: -1497821119
       vertices: []
       indices: 
       edges: []
@@ -637,27 +511,6 @@ TextureImporter:
       bones: []
       spriteID: 36e3fa4f64cfd4294944915dce59f863
       internalID: 182139753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Current Sprite Sheet - 12.14_25
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5f38313f892a48bf9b841122052f1b0
-      internalID: 213967264
       vertices: []
       indices: 
       edges: []
@@ -795,7 +648,7 @@ TextureImporter:
         x: 96
         y: 192
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -868,27 +721,6 @@ TextureImporter:
       bones: []
       spriteID: 2c40ff8f1238547399ad487b4e39417e
       internalID: -2000499574
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Current Sprite Sheet - 12.14_41
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f599d2dd79c54484580fa1e6affaaa08
-      internalID: 1575848391
       vertices: []
       indices: 
       edges: []
@@ -1024,9 +856,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 96
         width: 32
-        height: 32
+        height: 96
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1036,27 +868,6 @@ TextureImporter:
       bones: []
       spriteID: 97be7387509a54b27a31281991504b76
       internalID: -2051381182
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Current Sprite Sheet - 12.14_52
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43a823b543b144ce6be674e64932d820
-      internalID: -1278823110
       vertices: []
       indices: 
       edges: []
@@ -1209,34 +1020,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Current Sprite Sheet - 12.14_60
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17984a8562e144b2498ac01eba5fe7eb
-      internalID: 1866989284
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Current Sprite Sheet - 12.14_61
       rect:
         serializedVersion: 2
         x: 32
         y: 96
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1254,7 +1044,7 @@ TextureImporter:
       name: Current Sprite Sheet - 12.14_62
       rect:
         serializedVersion: 2
-        x: 96
+        x: 97
         y: 96
         width: 32
         height: 32
@@ -1267,69 +1057,6 @@ TextureImporter:
       bones: []
       spriteID: d6fa94e9f59ae4cc3a1de2de7b10fcde
       internalID: 1048924910
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Current Sprite Sheet - 12.14_63
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 41ee4d332975d49bd81c988c538b7e70
-      internalID: -1921196990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Current Sprite Sheet - 12.14_64
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b5900bed72b7744b8a5d9b8e1edc2520
-      internalID: 554061393
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Current Sprite Sheet - 12.14_65
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc1b6e91083d7420aa6861ded35fcc2c
-      internalID: 86110612
       vertices: []
       indices: 
       edges: []
@@ -1362,7 +1089,7 @@ TextureImporter:
         x: 192
         y: 64
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1383,7 +1110,7 @@ TextureImporter:
         x: 224
         y: 64
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1402,7 +1129,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 64
+        y: 82
         width: 32
         height: 32
       alignment: 0
@@ -1422,8 +1149,8 @@ TextureImporter:
       name: Current Sprite Sheet - 12.14_70
       rect:
         serializedVersion: 2
-        x: 288
-        y: 64
+        x: 160
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -1506,8 +1233,8 @@ TextureImporter:
       name: Current Sprite Sheet - 12.14_74
       rect:
         serializedVersion: 2
-        x: 288
-        y: 32
+        x: 160
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -1519,6 +1246,27 @@ TextureImporter:
       bones: []
       spriteID: 03dcb36a0ba684aa09340719c34e1143
       internalID: -933994196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Current Sprite Sheet - 12.14_10
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 44
+        width: 6
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee78931e4e9e2d4e941267a59d01e7a
+      internalID: 363264154
       vertices: []
       indices: 
       edges: []

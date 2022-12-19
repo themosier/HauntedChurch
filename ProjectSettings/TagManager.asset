@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Walls
   - Page
+  - Items
   layers:
   - Default
   - TransparentFX
@@ -44,11 +45,11 @@ TagManager:
   - name: Ground
     uniqueID: 113495191
     locked: 0
-  - name: Objects
-    uniqueID: 1793852143
-    locked: 0
   - name: Walls
     uniqueID: 2165496095
+    locked: 0
+  - name: Objects
+    uniqueID: 1793852143
     locked: 0
   - name: Characters
     uniqueID: 2811516569
