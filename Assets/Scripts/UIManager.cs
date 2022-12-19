@@ -38,6 +38,6 @@ public class UIManager : MonoBehaviour
 
     public void ButtonUnHighlight(TextMeshProUGUI text)
     {
-        text.color = new Color(190, 0, 0);
+        text.color = new Color32(190, 0, 0, 255);
     }
 }

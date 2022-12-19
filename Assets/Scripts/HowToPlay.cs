@@ -11,15 +11,23 @@ public class HowToPlay : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI NextButton;
 
-    [SerializeField]
-    private GameObject[] pages;
+    private List<GameObject> pages = new List<GameObject>();
     private int curr = 0;
 
     // Start is called before the first frame update
     void Awake()
     {
         //pages = new List<TextMeshProUGUI>();
-        pages = GameObject.FindGameObjectsWithTag("Page");
+        GameObject[] children = GameObject.FindGameObjectsWithTag("Page");
+
+        for (int i = 0; i < children.Length; i++)
+        {
+            pages.Add(GameObject.Find("Instructions" + (i+1)));
+            pages[i].SetActive(false);
+        }
+
+        pages[0].SetActive(true);
+        
 
         BackButton.enabled = false;
         NextButton.enabled = true;
@@ -28,7 +36,7 @@ public class HowToPlay : MonoBehaviour
     public void NextClick()
     {
         curr++;
-        if (curr == pages.Length - 1)
+        if (curr == pages.Count - 1)
         {
             NextButton.enabled = false;
         }
@@ -37,8 +45,11 @@ public class HowToPlay : MonoBehaviour
             BackButton.enabled = true;
         }
 
-        pages[curr - 1].gameObject.GetComponent<TextMeshProUGUI>().enabled = false;
-        pages[curr].gameObject.GetComponent<TextMeshProUGUI>().enabled = true;
+        //pages[curr - 1].GetComponent<TextMeshProUGUI>().enabled = false;
+        //pages[curr].GetComponent<TextMeshProUGUI>().enabled = true;
+
+        pages[curr - 1].SetActive(false);
+        pages[curr].SetActive(true);
     }
 
     public void BackClick()
@@ -48,12 +59,15 @@ public class HowToPlay : MonoBehaviour
         {
             BackButton.enabled = false;
         }
-        if (curr < pages.Length - 1)
+        if (curr < pages.Count - 1)
         {
             NextButton.enabled = true;
         }
 
-        pages[curr + 1].gameObject.GetComponent<TextMeshProUGUI>().enabled = false;
-        pages[curr].gameObject.GetComponent<TextMeshProUGUI>().enabled = true;
+        //pages[curr + 1].GetComponent<TextMeshProUGUI>().enabled = false;
+        //pages[curr].GetComponent<TextMeshProUGUI>().enabled = true;
+
+        pages[curr + 1].SetActive(false);
+        pages[curr].SetActive(true);
     }
 }
