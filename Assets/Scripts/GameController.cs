@@ -10,12 +10,15 @@ public class GameController : MonoBehaviour // Singleton class holding reference
 {
     public static GameController game { get; private set; }
     public static PlayerController Player { get; private set; }
-    //public static PursueUnit movePursue { get; private set; }
-    //public static Wander2Unit moveWander { get; private set; }
+    public static EnemyController Enemy { get; private set; }
+    public static OrganManager Organ { get; private set; }
+    public static GameObject UI { get; private set; }
+
+    public static UIManager uiManager { get; private set; }
+    public static Camera MainCamera { get; private set; }
 
     public static Vector2 maxBounds { get; private set; }
     public static Vector2 minBounds { get; private set; }
-
     
 
     private void Awake()
@@ -27,6 +30,13 @@ public class GameController : MonoBehaviour // Singleton class holding reference
         }
         game = this;
         Player = game.GetComponentInChildren<PlayerController>();
+        Enemy = game.GetComponentInChildren<EnemyController>();
+        Organ = GameObject.Find("Organ").GetComponentInChildren<OrganManager>();
+        UI = GameObject.Find("UI");
+        MainCamera = Camera.main;
+        uiManager = game.GetComponentInChildren<UIManager>();
+
+        //AudioManager.Audio.PlayMusic(bgMusic);
 
         GameObject walls = GameObject.Find("Walls");
         Assert.IsNotNull(walls);
@@ -37,17 +47,5 @@ public class GameController : MonoBehaviour // Singleton class holding reference
         Debug.Log("min: " + minBounds);
         Debug.Log("max: " + maxBounds);
 
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

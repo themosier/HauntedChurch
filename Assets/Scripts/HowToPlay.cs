@@ -45,9 +45,6 @@ public class HowToPlay : MonoBehaviour
             BackButton.enabled = true;
         }
 
-        //pages[curr - 1].GetComponent<TextMeshProUGUI>().enabled = false;
-        //pages[curr].GetComponent<TextMeshProUGUI>().enabled = true;
-
         pages[curr - 1].SetActive(false);
         pages[curr].SetActive(true);
     }
@@ -63,9 +60,6 @@ public class HowToPlay : MonoBehaviour
         {
             NextButton.enabled = true;
         }
-
-        //pages[curr + 1].GetComponent<TextMeshProUGUI>().enabled = false;
-        //pages[curr].GetComponent<TextMeshProUGUI>().enabled = true;
 
         pages[curr + 1].SetActive(false);
         pages[curr].SetActive(true);
