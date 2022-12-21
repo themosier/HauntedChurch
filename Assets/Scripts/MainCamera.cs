@@ -35,7 +35,6 @@ public class MainCamera : MonoBehaviour
         float camX = Mathf.Clamp(GameController.Player.transform.position.x, leftBound, rightBound);
         float camY = Mathf.Clamp(GameController.Player.transform.position.y, bottomBound, topBound);
 
-        //transform.position = new Vector3(GameController.game.Player.transform.position.x, GameController.game.Player.transform.position.y + offset, transform.position.z);
         transform.position = new Vector3(camX, camY, transform.position.z);
     }
 }

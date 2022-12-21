@@ -57,11 +57,11 @@ TagManager:
   - name: Objects
     uniqueID: 1793852143
     locked: 0
-  - name: Characters
-    uniqueID: 2811516569
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Characters
+    uniqueID: 2811516569
     locked: 0
   - name: UI
     uniqueID: 2628735561

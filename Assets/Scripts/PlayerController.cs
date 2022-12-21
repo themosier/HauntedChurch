@@ -34,24 +34,9 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         //// Update position from input
-        //float hPos = Input.GetAxis("Horizontal");
-        //Vector2 pos = transform.position;
-        //pos.x += speed * hPos * Time.deltaTime;
-
-        //float vPos = Input.GetAxis("Vertical");
-        //pos.y += speed * vPos * Time.deltaTime;
-        //transform.position = pos;
-
-        //Vector2 move = new Vector2(hPos, vPos);
-
         
-
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
-        
-        if (sprite.flipX == true)
-        {
-            int x = 1;
-        }           
+         
     }
 
     private void OnMove(InputValue input)

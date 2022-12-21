@@ -7,6 +7,14 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+
+    [SerializeField]
+    AudioClip bgMusic;
+
+    private void Awake()
+    {
+        //AudioController.instance.PlayMusic(bgMusic);
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene(1);

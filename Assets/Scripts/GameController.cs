@@ -19,7 +19,6 @@ public class GameController : MonoBehaviour // Singleton class holding reference
 
     public static Vector2 maxBounds { get; private set; }
     public static Vector2 minBounds { get; private set; }
-
     
 
     private void Awake()
@@ -35,7 +34,9 @@ public class GameController : MonoBehaviour // Singleton class holding reference
         Organ = GameObject.Find("Organ").GetComponentInChildren<OrganManager>();
         UI = GameObject.Find("UI");
         MainCamera = Camera.main;
-        uiManager = new UIManager();
+        uiManager = game.GetComponentInChildren<UIManager>();
+
+        //AudioManager.Audio.PlayMusic(bgMusic);
 
         GameObject walls = GameObject.Find("Walls");
         Assert.IsNotNull(walls);
@@ -46,17 +47,5 @@ public class GameController : MonoBehaviour // Singleton class holding reference
         Debug.Log("min: " + minBounds);
         Debug.Log("max: " + maxBounds);
 
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -68,7 +68,7 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator GameOver()
     {
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(.5f);
 
         Time.timeScale = 1;
         GameController.uiManager.GameOver();

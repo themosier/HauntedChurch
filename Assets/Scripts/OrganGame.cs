@@ -43,7 +43,6 @@ public class OrganGame : MonoBehaviour
                 ResetSlots();
             }
         }
-        //transform.position += (Vector3)eventData.delta;
     }
 
     public void ClickAndDrag(Image image)

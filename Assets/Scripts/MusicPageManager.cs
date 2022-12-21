@@ -12,8 +12,6 @@ public class MusicPageManager : MonoBehaviour
     {
         defaultColor = new Color32(195, 160, 64, 255);
         GetComponent<SpriteRenderer>().material.color = defaultColor;
-
-        //defaultColor = GetComponent<SpriteRenderer>().material.color;
     }
 
     // Update is called once per frame
@@ -32,12 +30,12 @@ public class MusicPageManager : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        GetComponent<SpriteRenderer>().material.color = Color.white;
+        //GetComponent<SpriteRenderer>().material.color = Color.white;
     }
 
     private void OnMouseExit()
     {
-        GetComponent<SpriteRenderer>().material.color = defaultColor;
+        //GetComponent<SpriteRenderer>().material.color = defaultColor;
     }
 
 }
