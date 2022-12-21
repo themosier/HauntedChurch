@@ -7,9 +7,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-
     [SerializeField]
-    AudioClip bgMusic;
+    AudioClip buttonSound;
 
     private void Awake()
     {
@@ -71,5 +70,10 @@ public class UIManager : MonoBehaviour
         {
             text.color = new Color32(190, 0, 0, 255);
         }
+    }
+
+    public void ButtonUp()
+    {
+        AudioController.instance.PlaySound(buttonSound);
     }
 }

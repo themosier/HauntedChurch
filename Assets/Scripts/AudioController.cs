@@ -6,7 +6,8 @@ public class AudioController : MonoBehaviour
 {
     public static AudioController instance { get; private set; }
 
-    public AudioSource audioSource;
+    public AudioSource musicSource;
+    public AudioSource soundSource;
 
     [SerializeField]
     AudioClip startingMusic;
@@ -21,7 +22,8 @@ public class AudioController : MonoBehaviour
         }
         instance = this;
 
-        audioSource = GetComponent<AudioSource>();
+        musicSource = GetComponent<AudioSource>();
+        soundSource = GetComponent<AudioSource>();
 
         PlayMusic(startingMusic);
 
@@ -36,8 +38,13 @@ public class AudioController : MonoBehaviour
 
     public void PlayMusic(AudioClip clip)
     {
-        audioSource.clip = clip;
-        audioSource.loop = true;
-        audioSource.Play();
+        musicSource.clip = clip;
+        musicSource.loop = true;
+        musicSource.Play();
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        soundSource.PlayOneShot(clip);
     }
 }

@@ -5,6 +5,9 @@ using UnityEngine;
 public class MusicPageManager : MonoBehaviour
 {
     private Color defaultColor;
+
+    [SerializeField]
+    AudioClip pickupSound;
     //private SpriteRenderer renderer = new SpriteRenderer();
 
     // Start is called before the first frame update
@@ -25,6 +28,7 @@ public class MusicPageManager : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             GameController.Player.CollectObject(gameObject);
+            GameController.Audio.PlaySound(pickupSound);
         }
     }
 
