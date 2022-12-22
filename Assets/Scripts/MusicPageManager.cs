@@ -28,7 +28,7 @@ public class MusicPageManager : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             GameController.Player.CollectObject(gameObject);
-            GameController.Audio.PlaySound(pickupSound);
+            AudioController.instance.PlaySound(pickupSound);
         }
     }
 

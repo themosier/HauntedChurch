@@ -15,6 +15,10 @@ public class EnemyController : MonoBehaviour
 
     private Rigidbody2D rb;
     Animator anim;
+    Vector2 startPosition;
+
+    [SerializeField]
+    AudioClip gameOverSound;
 
     
     // Start is called before the first frame update
@@ -24,6 +28,7 @@ public class EnemyController : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
+        startPosition = transform.position;
 
         // Add movement modes
         movePursue = gameObject.AddComponent<PursueUnit>();
@@ -66,8 +71,19 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public void PlayerCollectedPage()
+    {
+        hearing.IncreaseHearing();
+    }
+
+    public void ResetPosition()
+    {
+        transform.position = startPosition;
+    }
+
     IEnumerator GameOver()
     {
+        //AudioController.instance.PlaySound(gameOverSound);
         yield return new WaitForSecondsRealtime(.5f);
 
         Time.timeScale = 1;

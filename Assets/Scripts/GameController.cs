@@ -66,6 +66,14 @@ public class GameController : MonoBehaviour // Singleton class holding reference
         {
             uiManager.WonGame();
         }
+        if (Input.GetKeyDown(KeyCode.KeypadPlus))
+        {
+            Enemy.PlayerCollectedPage();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Enemy.ResetPosition();
+        }
 #endif
     }
 

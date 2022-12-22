@@ -6,10 +6,16 @@ public class PlayerDetection : MonoBehaviour
 {
     public bool isInHearingRange { get; private set; }
 
+    [SerializeField]
+    float radiusIncrease;
+
+    CircleCollider2D hearingRadius;
+
     // Start is called before the first frame update
     void Start()
     {
         isInHearingRange = false;
+        hearingRadius = GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
@@ -32,5 +38,10 @@ public class PlayerDetection : MonoBehaviour
         {
             isInHearingRange = false;
         }
+    }
+
+    public void IncreaseHearing()
+    {
+        hearingRadius.radius += radiusIncrease;
     }
 }

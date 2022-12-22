@@ -133,4 +133,9 @@ public class OrganGame : MonoBehaviour
         filled = 0;
 
     }
+
+    public void SelectPage(AudioClip pageClip)
+    {
+        AudioController.instance.PlayPage(pageClip);
+    }
 }

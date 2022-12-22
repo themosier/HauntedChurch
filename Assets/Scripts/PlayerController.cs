@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
     {
         pagesCollected++;
         pagesCollectedUI.text = pagesCollected.ToString();
+        GameController.Enemy.PlayerCollectedPage();
 
         Destroy(obj);
     }

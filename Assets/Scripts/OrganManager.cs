@@ -31,9 +31,10 @@ public class OrganManager : MonoBehaviour
     {
         if (GameController.Player.pagesCollected == 4)
         {
-            //OrganGame.SetActive(true);
+            OrganGame.SetActive(true);
+            GameController.Enemy.ResetPosition();
 
-            GameController.uiManager.WonGame();
+            //GameController.uiManager.WonGame();
         }
         else if (GameController.Player.pagesCollected > 4)
         {

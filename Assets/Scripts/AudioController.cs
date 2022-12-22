@@ -22,8 +22,8 @@ public class AudioController : MonoBehaviour
         }
         instance = this;
 
-        musicSource = GetComponent<AudioSource>();
-        soundSource = GetComponent<AudioSource>();
+        musicSource = gameObject.AddComponent<AudioSource>();
+        soundSource = gameObject.AddComponent<AudioSource>();
 
         PlayMusic(startingMusic);
 
@@ -46,5 +46,20 @@ public class AudioController : MonoBehaviour
     public void PlaySound(AudioClip clip)
     {
         soundSource.PlayOneShot(clip);
+    }
+
+    public void PlayPage(AudioClip clip)
+    {
+        musicSource.Pause();
+        StartCoroutine(PlayPageCoroutine(clip));
+        //musicSource.Play();
+    }
+
+    IEnumerator PlayPageCoroutine(AudioClip clip)
+    {
+        musicSource.Pause();
+        soundSource.PlayOneShot(clip);
+        yield return new WaitForSeconds(clip.length);
+        //musicSource.Play();
     }
 }
