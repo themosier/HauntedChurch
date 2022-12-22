@@ -16,6 +16,11 @@ public class UIManager : MonoBehaviour
     }
     public void PlayGame()
     {
+        if (AudioController.instance.musicSource.clip != AudioController.instance.startingMusic || !AudioController.instance.musicSource.isPlaying)
+        {
+            AudioController.instance.PlayMusic(AudioController.instance.startingMusic);
+        }
+
         SceneManager.LoadScene(1);
     }
 
@@ -31,6 +36,11 @@ public class UIManager : MonoBehaviour
 
     public void MainMenu()
     {
+        //if(AudioController.instance.musicSource.clip != AudioController.instance.startingMusic || !AudioController.instance.musicSource.isPlaying)
+        //{
+        //    AudioController.instance.PlayMusic(AudioController.instance.startingMusic);
+        //}
+        //AudioController.instance.musicSource.volume = .5f;
         SceneManager.LoadScene(0);
     }
 
@@ -41,6 +51,9 @@ public class UIManager : MonoBehaviour
 
     public void WonGame()
     {
+        AudioController.instance.musicSource.volume = 1f;
+        AudioController.instance.PlayMusic(AudioController.instance.winMusic);
+        AudioController.instance.soundSource.Stop();
         SceneManager.LoadScene(5);
     }
     public void QuitGame()

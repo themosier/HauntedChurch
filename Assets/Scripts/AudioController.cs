@@ -6,11 +6,11 @@ public class AudioController : MonoBehaviour
 {
     public static AudioController instance { get; private set; }
 
-    public AudioSource musicSource;
-    public AudioSource soundSource;
+    public AudioSource musicSource { get; private set; }
+    public AudioSource soundSource { get; private set; }
+    public AudioClip startingMusic { get; private set; }
+    public AudioClip winMusic { get; private set; }
 
-    [SerializeField]
-    AudioClip startingMusic;
 
     // Start is called before the first frame update
     void Awake()
@@ -24,6 +24,12 @@ public class AudioController : MonoBehaviour
 
         musicSource = gameObject.AddComponent<AudioSource>();
         soundSource = gameObject.AddComponent<AudioSource>();
+
+        musicSource.volume = .5f;
+        soundSource.volume = .2f;
+
+        startingMusic = GameObject.Find("StartingMusic").GetComponent<AudioSource>().clip;
+        winMusic = GameObject.Find("WinMusic").GetComponent<AudioSource>().clip;
 
         PlayMusic(startingMusic);
 
@@ -58,7 +64,8 @@ public class AudioController : MonoBehaviour
     IEnumerator PlayPageCoroutine(AudioClip clip)
     {
         musicSource.Pause();
-        soundSource.PlayOneShot(clip);
+        soundSource.clip = clip;
+        soundSource.Play();
         yield return new WaitForSeconds(clip.length);
         //musicSource.Play();
     }

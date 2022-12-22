@@ -42,6 +42,8 @@ public class GameController : MonoBehaviour // Singleton class holding reference
         uiManager = game.GetComponentInChildren<UIManager>();
         Audio = GetComponentInChildren<AudioController>();
 
+        AudioController.instance.musicSource.volume = .2f;
+
         //AudioManager.Audio.PlayMusic(bgMusic);
 
         GameObject walls = GameObject.Find("Walls");
