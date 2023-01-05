@@ -1,65 +1,18 @@
-# HauntedChurch
-Horror Jam - "Haunting Melody"
+# Here Comes the Bride
+This is a short, music-driven horror game made for Themed Horror Jam #10 with the theme "Haunting Melody." The game is playable in browser on itch.io here: https://cynicaesura.itch.io/herecomesthebride
+
+##Credits:
+-Art: Hayden Gough
+-Music: Jey Warner
+-Programming: Devon Mosier
+
+## Further development:
+Development for the original build of this game came together in less than a month. We plan to continue work on the game to improve upon and add to what we wree able to implement for the jam.
+
+- improve balance of enemy movement and player detection
+- randomize the position of items
+- rework final puzzle
+- add an introduction and narrative
+- add more animation and effects
 
 
-# Repo Download instructions
-I recommend installing the Github client - https://desktop.github.com/
-
-In the application:
-
-File > Clone repository > HauntedChurch
-- should show up if you're added as a collaborator
-
-Make a folder to keep it in and hit Clone
-
-# Unity Setup Instructions:
-Download Unity - https://unity.com/download
-
-Install
-
-# In Unity Hub:
-Click the arrow by "Open" and navigate to the top folder of the repository "HauntedChurch"
-
-This should open the project in the Unity editor and it will look complicated but you only need to worry about like 3 things
-
-# In the editor:
-On the bottom you should see the Project files and stuff
-
-Assets > Scenes > Map and double click to load that scene
-
-The only things in this scene is two tilemaps: one for the ground and one for any walls/obstacles
-
-From the top menu:
-Window > 2D > Tile Palette
-
-This should have 2 palettes, one for floor tiles and one for wall tiles where i just kinda threw everything that looked like a wall maybe
-
-Now just choose the paintbrush tool from the palette and the tile you want to paint and draw on the grid
-
-(Make sure you choose the right tilemap from the hierarchy on the left)
-
-This tutorial also shows where all these are
-
-https://www.mongodb.com/developer/languages/csharp/designing-developing-2d-game-levels-unity-csharp/
-
-Go crazy
-
-I haven't figured out if you can rotate tiles yet so don't worry about it looking entirely correct. Just put down the general layout of the church
-
-If there's any tiles I didn't include that you want on the palette do this:
-- Go to the Sprites folder in the Project menu on the bottom
-- click the arrow next to the Spritesheet
-- drag any sprites you want to add from the folder to the palette
-
-# Committing changes
-Once you've made some changes you're happy with save everything
-
-Go back to the Github client
-
-You should see everything you changed listed on the left under Changes
-
-Just make sure all the checkboxes are selected, type a message, and hit "Commit to master"
-
-Now it should have a blue button on the right that says "Push Origin" hit that
-
-that should be about it
